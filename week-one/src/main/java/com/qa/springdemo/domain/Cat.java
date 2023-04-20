@@ -2,17 +2,18 @@ package com.qa.springdemo.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Cat {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	public boolean hasWhiskers;
 	public String name;
+	public boolean hasWhiskers;
 	public boolean evil;
 	public int length;
 
@@ -20,10 +21,19 @@ public class Cat {
 		super();
 	}
 
-	public Cat(boolean hasWhiskers, String name, boolean evil, int length) {
+	public Cat(String name, boolean hasWhiskers, boolean evil, int length) {
 		super();
 		this.hasWhiskers = hasWhiskers;
 		this.name = name;
+		this.evil = evil;
+		this.length = length;
+	}
+
+	public Cat(long id, String name, boolean hasWhiskers, boolean evil, int length) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.hasWhiskers = hasWhiskers;
 		this.evil = evil;
 		this.length = length;
 	}
