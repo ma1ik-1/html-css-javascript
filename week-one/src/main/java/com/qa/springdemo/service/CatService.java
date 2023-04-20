@@ -14,5 +14,5 @@ public interface CatService {
 
 	Cat remove(int id);
 
-	Cat update(int id, String name, Boolean evil, Boolean hasWhiskers, Integer length);
+	Cat update(long id, String name, Boolean evil, Boolean hasWhiskers, Integer length);
 }

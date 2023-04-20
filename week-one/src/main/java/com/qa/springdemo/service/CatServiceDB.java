@@ -47,9 +47,9 @@ public class CatServiceDB implements CatService {
 	}
 
 	@Override
-	public Cat update(int id, String name, Boolean evil, Boolean hasWhiskers, Integer length) {
+	public Cat update(long id, String name, Boolean evil, Boolean hasWhiskers, Integer length) {
 		// TODO Auto-generated method stub
-		Cat c = this.get(id);
+		Cat c = this.get((int) id);
 
 		if (name != null) {
 			c.setName(name);
