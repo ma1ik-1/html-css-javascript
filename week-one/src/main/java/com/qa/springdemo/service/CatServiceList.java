@@ -40,9 +40,9 @@ public class CatServiceList implements CatService {
 	}
 
 	@Override
-	public Cat update(int id, String name, Boolean evil, Boolean hasWhiskers, Integer length) {
+	public Cat update(long id, String name, Boolean evil, Boolean hasWhiskers, Integer length) {
 		// TODO Auto-generated method stub
-		Cat toUpdate = this.cats.get(id);
+		Cat toUpdate = this.cats.get((int) id);
 
 		if (name != null) {
 			toUpdate.setName(name);
